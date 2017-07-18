@@ -106,3 +106,4 @@ Tracer may sometimes fail to resolve Jaeger's address. In such case run the foll
 ```bash
 sudo iptables -F
 ```
+# remote this too
