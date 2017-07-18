@@ -44,14 +44,11 @@ pipeline {
                         mvn test
                     '''
                 }
+                sh 'pwd'
+                sh 'ls -R'
+                junit '**/target/*-reports/**/*.xml'
+                }
             }
-            echo 'Fix things here'
-                    sh 'pwd'
-                    sh 'ls -R'
-                    junit '**/target/*-reports/**/*.xml'
-        }
-
-
         stage('all-in-one: delete all') {
             steps {
                 sh 'oc get all'
