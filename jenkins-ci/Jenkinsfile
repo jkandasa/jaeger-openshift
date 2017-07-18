@@ -42,12 +42,15 @@ pipeline {
                         git clone https://github.com/Hawkular-QE/jaeger-java-test.git
                         cd jaeger-java-test
                         mvn test
-                        ls -R
-                        junit '**/target/*-reports/*.xml'
                     '''
                 }
             }
         }
+        echo 'Fix things here'
+        sh 'pwd'
+        sh 'ls -R'
+        junit '**/target/*-reports/**/*.xml'
+
         stage('all-in-one: delete all') {
             steps {
                 sh 'oc get all'
