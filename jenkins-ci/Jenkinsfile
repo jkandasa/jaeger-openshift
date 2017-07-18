@@ -42,6 +42,8 @@ pipeline {
                         git clone https://github.com/Hawkular-QE/jaeger-java-test.git
                         cd jaeger-java-test
                         mvn test
+                        ls -R
+                        junit '**/target/*-reports/*.xml'
                     '''
                 }
             }
